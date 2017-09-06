@@ -1,3 +1,126 @@
-#test {
+html,
+body,
+#main {
+    height: 100%;
+}
+
+#main {
+	background: url(cover.jpeg) center center no-repeat;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    padding: 0 20%;
+    box-shadow: inset 0 0 100px #000;
+    
+}
+
+.all {
+	vertical-align: middle;
+	display: table-cell;
+	width: 100%;
+}
+
+.quote {
+	position: absolute;
+	top: 50px;
+	margin-left: 0;
+	margin-right: 0;
+
+}
+
+blockquote {
+    border: none;
+    margin: 0;
+    font-family: Georgia, Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    /*color: white;*/
+
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: bold;
+    color: #888;
+    margin-top: 40px;
+}
+
+.main-text {
 	text-align: center;
+    /*color: white;*/
+    /*display: table-cell;*/
+    
+}
+
+.glyphicon {
+	font-size: 5em;
+}
+
+.glyphicon:hover {
+	color: grey;
+}
+
+#days {
+	text-align: center;
+	width: 100%;
+	margin-top: 20px;
+}
+
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    *width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+
+/**
+ *  The following is not really needed in this case
+ *  Only to demonstrate the usage of @media for large screens
+ */    
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+
+.headerDays {
+	width: 182px;
+	/*margin-right: 10px;*/
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+
+    margin: 0 auto;
+}
+
+.items {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.CreateButton {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin-left: auto; 
+    margin-right: auto; 
+    width: 180px;
 }
