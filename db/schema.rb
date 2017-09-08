@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905073751) do
+ActiveRecord::Schema.define(version: 20170906100313) do
+
+  create_table "quotes", force: :cascade do |t|
+    t.string "quot"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tasklists", force: :cascade do |t|
     t.string "listname"
