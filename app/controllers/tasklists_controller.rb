@@ -7,6 +7,7 @@ class TasklistsController < ApplicationController
 		@ins = @quot.sample
 		@insquot = @ins.quot
 		@insauth = @ins.author
+
 	end
 
 end

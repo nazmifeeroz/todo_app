@@ -4,9 +4,11 @@ body {
     height: 100%;
 }
 
-body {
+  body {
   overflow-x: hidden;
-     background: url(cover2.jpg) center center no-repeat;
+
+     /*background: url(<% @bgimg %>) center center no-repeat;*/
+    background-image: url( <%= Bgimage.find_by(id:1).imgname %> );
     background-size: cover;
 }
 
@@ -25,17 +27,21 @@ body {
 }
 
 #insBox {
-  background-color: #31B0D5;
+  /*background-color: #31B0D5;*/
   border-radius: 5px;
   box-shadow: 1px 1px 1px #000;
   padding: 10px;
-  color: white;
+  color: black;
 }
 
 #bgChange {
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+.imgThumb {
+  display: block; height: 350px; overflow: auto;
 }
 
 #wrapper {

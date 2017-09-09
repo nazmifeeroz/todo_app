@@ -50,47 +50,25 @@
 
 <!-- Bg modal -->
 <div class="modal fade" id="bgModal" tabindex="-1" role="dialog" aria-labelledby="quoteLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Inspirational Quotes</h4>
+        <h4 class="modal-title" id="myModalLabel">Background</h4>
       </div>
       <div class="modal-body">
-		<div class="tablecont">
-	      	<table class="table table-hover table-responsive">
-	      		<thead>
-	      			<th width="300px">Quotes</th>
-	      			<th>Author</th>
-	      		</thead>
-	      		<tbody>
-	      			<% @quot.each do |q| %>
-	      			<tr>
-		      			<td width="300px"><%= q.quot %></td>
-		      			<td><%= q.author %></td>
-		      			<td><%= link_to 'Delete', quote_path(id:q.id), method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-danger btn-xs" %></td>
-	      			</tr>
-	      			<% end %>
-	      		</tbody>
-	      	</table>
-        </div>
-        <p><b>Add new Qoutes</b></p>
-		<%= form_for @quote, url: quotes_path, method: :post do |f| %>
+		
+        <div class="imgThumb">
+	        <%= image_tag("cover2", class: "img-responsive img-thumbnail") %>
+	        <%= image_tag("cover", class: "img-responsive img-thumbnail") %>
+	        <%= image_tag("cover3", class: "img-responsive img-thumbnail") %>
+	        <%= image_tag("cover4", class: "img-responsive img-thumbnail") %>
+		</div>
 
-			<div class="form-group">
-				<%= f.label :Quote %>
-				<%= f.text_field :quot, class:"form-control", :required => true, autofocus: true %>
-			</div>
-			
-			<div class="form-group">
-				<%= f.label :author %>
-				<%= f.text_field :author, class:"form-control", :required => true %>	
-			</div>
-			
       <div class="modal-footer">
-        <%= f.submit "Add Quote", class:"btn btn-success" %>
+        
 		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		<% end %>
+		
       </div>
     </div>
   </div>

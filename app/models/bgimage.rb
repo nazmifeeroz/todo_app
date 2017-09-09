@@ -1,0 +1,4 @@
+class Bgimage < ApplicationRecord
+
+
+end
