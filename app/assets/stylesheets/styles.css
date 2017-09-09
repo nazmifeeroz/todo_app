@@ -10,6 +10,11 @@ body {
     background-size: cover;
 }
 
+#menu-toggle:link {
+  text-decoration: none;
+
+}
+
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;

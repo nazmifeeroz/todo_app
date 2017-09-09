@@ -14,7 +14,7 @@
 	  	
 	  		<div id="page-content-wrapper">
             <div class="container-fluid">
-              <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">Menu</a>
+              <a href="#menu-toggle" id="menu-toggle" class="glyphicon glyphicon-chevron-right"></a>
     			    <%= yield %>
             </div> 
         </div>
@@ -23,6 +23,7 @@
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+
     });
     </script>
   </body>
