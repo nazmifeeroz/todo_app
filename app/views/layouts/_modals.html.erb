@@ -59,10 +59,29 @@
       <div class="modal-body">
 		
         <div class="imgThumb">
-	        <%= image_tag("cover2", class: "img-responsive img-thumbnail") %>
-	        <%= image_tag("cover", class: "img-responsive img-thumbnail") %>
-	        <%= image_tag("cover3", class: "img-responsive img-thumbnail") %>
-	        <%= image_tag("cover4", class: "img-responsive img-thumbnail") %>
+	        
+	        
+	        <%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover4" %>
+				<%= image_submit_tag 'cover4', class:"img-responsive img-thumbnail" %>
+			<% end %>
+	        
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover3" %>
+				<%= image_submit_tag 'cover3', class:"img-responsive img-thumbnail" %>
+			<% end %>
+			
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover2" %>
+				<%= image_submit_tag 'cover2', class:"img-responsive img-thumbnail" %>
+			<% end %>
+
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover" %>
+				<%= image_submit_tag 'cover', class:"img-responsive img-thumbnail" %>
+			<% end %>
+
+
 		</div>
 
       <div class="modal-footer">

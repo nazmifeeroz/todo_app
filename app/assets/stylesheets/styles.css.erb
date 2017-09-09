@@ -2,19 +2,23 @@
 html,
 body {
     height: 100%;
-}
-
-  body {
-  overflow-x: hidden;
-
-     /*background: url(<% @bgimg %>) center center no-repeat;*/
-    background-image: url( <%= Bgimage.find_by(id:1).imgname %> );
-    background-size: cover;
-}
+} 
 
 #message {
   position: absolute;
   top: 10px;
+}
+
+#headerTask {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+    border-radius: 10px;
+    padding: 10px;
+
 }
 
 .tablecont { overflow; hidden;}

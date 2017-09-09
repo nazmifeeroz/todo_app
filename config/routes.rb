@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   	root to: 'tasklists#index'
   	resources :quotes, only: [:create, :destroy]
+  	resources :bgimages, only: [:update]
 
 	resources :tasklists do
 		resources :tasks, only: [:create]

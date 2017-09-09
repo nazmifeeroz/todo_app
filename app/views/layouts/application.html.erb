@@ -2,6 +2,17 @@
 <html>
   <head>
     <title>TodoApp</title>
+    
+    <style>
+      body {
+        overflow-x: hidden;
+
+           /*background: url(<% @bgimg %>) center center no-repeat;*/
+          background-image: url( <%= asset_path Bgimage.find_by(id:1).imgname %> );
+          background-size: cover;
+      }
+    </style>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>

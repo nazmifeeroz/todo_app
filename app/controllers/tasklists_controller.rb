@@ -8,6 +8,8 @@ class TasklistsController < ApplicationController
 		@insquot = @ins.quot
 		@insauth = @ins.author
 
+		@bgimage = Bgimage.find_by(:id=>1)
+		
 	end
 
 end
