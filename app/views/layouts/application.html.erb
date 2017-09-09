@@ -14,17 +14,25 @@
 	  	
 	  		<div id="page-content-wrapper">
             <div class="container-fluid">
-              <a href="#menu-toggle" id="menu-toggle" class="glyphicon glyphicon-chevron-right"></a>
+              <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle"><span id="menuButt" class="fa fa-list fa-2x"></span></a>
+              <%= render 'layouts/message' %>
+              <%= render 'layouts/quotes' %>
     			    <%= yield %>
             </div> 
         </div>
     </div>
+      <div id="bgChange"><button class="btn btn-default " data-toggle="modal" data-target="#bgModal"><span class="fa fa-picture-o"></span></button></div>
+      <%= render 'layouts/modals' %>
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+        $("#menuButt").toggleClass("fa fa-list fa-2x").toggleClass("fa fa-times fa-2x");
 
     });
+    $(".alert").fadeTo(2000, 500).fadeOut(500, function(){
+               $(".alert").fadeOut(500);
+                }); 
     </script>
   </body>
 </html>

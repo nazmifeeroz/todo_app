@@ -1,0 +1,9 @@
+<div class="container" id="message" >
+	 <% flash.each do |name, msg| %>
+		    <div class="alert alert-<%= "#{name}" %> alert-dismissable fade in">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		  <strong><%= "#{name}" %>!</strong> <%= "#{msg}" %>
+		</div>
+	  <% end %>
+
+  </div>
