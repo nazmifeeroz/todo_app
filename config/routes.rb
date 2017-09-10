@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   	resources :quotes, only: [:create, :destroy]
   	resources :bgimages, only: [:update]
 
-	resources :tasklists, only: [:create, :destroy] do
-		resources :tasks, only: [:create]
+	resources :tasklists, only: [:create, :destroy, :show] do
+		resources :tasks, only: [:create, :destroy, :update]
 	end
 
 end

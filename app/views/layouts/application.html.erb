@@ -10,6 +10,8 @@
            /*background: url(<% @bgimg %>) center center no-repeat;*/
           background-image: url( <%= asset_path Bgimage.find_by(id:1).imgname %> );
           background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
           box-shadow: inset 0 0 100px #000;
       }
     </style>
@@ -22,21 +24,8 @@
   </head>
 
   <body>
-
-  	<div id="wrapper">
-	  	<%= render 'layouts/nav' %>
-	  	
-	  		<div id="page-content-wrapper">
-            <div class="container-fluid">
-              <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle"><span id="menuButt" class="fa fa-list fa-2x"></span></a>
-              <%= render 'layouts/message' %>
-              <%= render 'layouts/quotes' %>
-    			    <%= yield %>
-            </div> 
-        </div>
-    </div>
-      <div id="bgChange"><button class="btn btn-default " data-toggle="modal" data-target="#bgModal"><span class="fa fa-picture-o"></span></button></div>
-      <%= render 'layouts/modals' %>
+    	 <%= yield %>
+       
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();

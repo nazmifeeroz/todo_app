@@ -12,7 +12,14 @@ class TasklistsController < ApplicationController
 
 		@list = Tasklist.all
 		@tasklist = Tasklist.new
+
+		@task = Task.new
 		
+	end
+
+	def show
+		@tasklist = Tasklist.find(params[:id])
+		@task = @tasklist.tasks.build
 	end
 
 	def create

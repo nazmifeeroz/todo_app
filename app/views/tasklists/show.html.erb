@@ -1,0 +1,38 @@
+
+<div class="container taskShow">
+	<div class="panel">
+		<div class="panel-heading" style="background-color: #FF7043;">
+			<h1 class="panel-title" style="color: white;"><i class="fa fa-calendar" aria-hidden="true"></i> Task for <%= @tasklist.listname %></h1>
+		</div><br>
+		
+		<div class="panel-body">
+			<h2> </h2>
+			<%= form_for @task, url: tasklist_tasks_path(tasklist_id: @tasklist.id), method: :post do |f| %>
+				
+				<%= f.label 'Title' %>
+				<%= f.text_field :tasktitle, class: "form-control" %>
+				<%= f.label 'Task Description' %>
+				<%= f.text_area :taskdesc, class: "form-control" %> <br>
+				<%= f.label 'Task Status' %>
+				<div class="row">
+					<div class="col-md-6">
+						<%= radio_button_tag(:taskstatus, "incomplete") %>
+						<%= label_tag(:taskstatus_incomplete, "Incomplete") %>
+						<%= radio_button_tag(:taskstatus, "inprogress") %>
+						<%= label_tag(:taskstatus_inprogress, "In-Progress") %>
+						<%= radio_button_tag(:taskstatus, "Complete") %>
+						<%= label_tag(:taskstatus_Complete, "Complete") %>
+					</div>
+					<div class="col-md-6">
+						<%= f.label 'Task Due' %>
+						<%= f.text_field :taskdue, :data => { :provide => :datepicker } %>
+					</div>
+				</div>
+				<hr>
+				<%= link_to 'Back', root_path, class: "btn btn-default" %>
+				<%= f.submit 'submit', class: "btn btn-success pull-right" %>
+
+			<% end %>
+		</div>
+	</div>
+</div>
