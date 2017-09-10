@@ -9,7 +9,24 @@ class TasklistsController < ApplicationController
 		@insauth = @ins.author
 
 		@bgimage = Bgimage.find_by(:id=>1)
+
+		@list = Tasklist.all
+		@tasklist = Tasklist.new
 		
+	end
+
+	def create
+		tl = params[:tasklist].permit(:listname)
+		Tasklist.create(tl)
+		flash[:success] = "New list created."
+		redirect_to root_path
+	end
+
+	def destroy
+		list = Tasklist.find(params[:id])
+		list.destroy
+		flash[:danger] = "List Deleted."
+		redirect_to root_path
 	end
 
 end

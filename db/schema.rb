@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909132351) do
+ActiveRecord::Schema.define(version: 20170910070749) do
 
   create_table "bgimages", force: :cascade do |t|
     t.string "imgname"
@@ -27,14 +27,15 @@ ActiveRecord::Schema.define(version: 20170909132351) do
 
   create_table "tasklists", force: :cascade do |t|
     t.string "listname"
-    t.string "listdesc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "taskname"
+    t.string "tasktitle"
     t.string "taskdesc"
+    t.string "taskstatus"
+    t.string "taskdue"
     t.integer "tasklist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -21,6 +21,10 @@ body {
 
 }
 
+#newlistModal {
+  text-align: center;
+}
+
 .tablecont { overflow; hidden;}
 .tablecont tr {display: block; }
 
@@ -33,7 +37,8 @@ body {
 #insBox {
   /*background-color: #31B0D5;*/
   border-radius: 5px;
-  box-shadow: 1px 1px 1px #000;
+  border: 1px solid gray;
+  /*box-shadow: 1px 1px 1px #000;*/
   padding: 10px;
   color: black;
 }
