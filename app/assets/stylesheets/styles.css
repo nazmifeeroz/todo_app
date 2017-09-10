@@ -48,6 +48,17 @@ body {
   display: block; height: 350px; overflow: auto;
 }
 
+#taskCont {
+  max-width: 600px;
+  margin-top: 10%;
+
+}
+
+.panel-title {
+  font-size: 30px;
+  text-align: center;
+}
+
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
