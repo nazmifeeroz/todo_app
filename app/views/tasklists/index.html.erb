@@ -1,12 +1,13 @@
+
 <div id="wrapper">
+        
         <%= render 'layouts/nav' %>
         
             <div id="page-content-wrapper">
             <div class="container-fluid">
               <a href="#menu-toggle" class="btn btn-warning" id="menu-toggle"><span id="menuButt" class="fa fa-list fa-2x"></span></a>
-              
-<%= render 'layouts/message' %>
 <%= render 'layouts/quotes' %>
+<%= render 'layouts/message' %>
 <div class="container" id="taskCont">
 	<div class="panel">
 		<div class="panel-heading" style="background-color: #FF7043;">
@@ -35,10 +36,12 @@
                         		<tr>
                         			<td><%= t.tasktitle %></td>
                         			<td><%= t.taskdue %></td>
-                        			<td><%= t.taskstatus %></td>
-                        			<td><button class="btn btn-warning btn-xs">Edit</button></td>
-                        			<td>
-                                    <%= link_to "Delete", tasklist_task_path(tasklist_id:l.id, id:t.id) , method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-xs" %></td>
+                        			<td> <span class="label label-<%= t.taskstatus %>">
+                                    <%= if t.taskstatus == 'danger' then 'Incomplete' end %>
+                                    <%= if t.taskstatus == 'warning' then 'In Progress' end %>
+                                    <%= if t.taskstatus == 'success' then 'Complete' end%></span> </td>
+                        			<td> <%= link_to 'View', edit_tasklist_task_path(tasklist_id:l.id, id:t.id), class: "btn btn-info btn-xs" %></td>
+                        			<td><%= link_to "Delete", tasklist_task_path(tasklist_id:l.id, id:t.id) , method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-xs" %></td>
                         		</tr>
                                 <% end %>
                         	</tbody>

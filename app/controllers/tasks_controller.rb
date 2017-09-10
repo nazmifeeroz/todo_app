@@ -4,10 +4,28 @@ class TasksController < ApplicationController
 
 		tasklist = Tasklist.find(params[:tasklist_id])
 		task_params = params.require(:task).permit(:tasktitle, :taskdesc, :taskstatus, :taskdue)
-		tasklist.tasks.create(task_params)
-		flash[:success] = "New task created."
-		redirect_to root_path
+		if tasklist.tasks.create(task_params).valid?
+			flash[:success] = "New task created."
+			redirect_to root_path
+		else
+			flash[:danger] = "Field(s) are blank."
+			redirect_to root_path
+		end
 	
+	end
+
+	def edit
+		@tasklist = Tasklist.find(params[:tasklist_id])
+		@task = @tasklist.tasks.find(params[:id])
+	end
+
+	def update 
+		task_params = params[:task].permit(:tasktitle, :taskdesc, :taskstatus, :taskdue)
+		tasklist = Tasklist.find(params[:tasklist_id])
+		task = tasklist.tasks.find(params[:id])
+		task.update(task_params)
+		flash[:success] = "Task updated"
+		redirect_to root_path
 	end
 
 	def destroy

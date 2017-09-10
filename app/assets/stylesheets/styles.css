@@ -38,7 +38,7 @@ body {
 .tablecont { overflow; hidden;}
 .tablecont tr {display: block; }
 
-.tablecont tbody { display: block; height: 200px; overflow: auto;}
+.tablecont tbody { display: block; max-height: 200px; overflow: auto;}
 
 #menu-toggle:link {
   text-decoration: none;
@@ -79,7 +79,7 @@ body {
 }
 
 #accCont {
-  display: block; height: 200px; overflow: auto;
+  display: block; max-height: 300px; overflow: auto;
 }
 
 #wrapper {

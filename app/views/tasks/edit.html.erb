@@ -7,7 +7,7 @@
 		
 		<div class="panel-body">
 			<h2> </h2>
-			<%= form_for @task, url: tasklist_tasks_path(tasklist_id: @tasklist.id), method: :post do |f| %>
+			<%= form_for @task, url: tasklist_task_path(tasklist_id: @tasklist.id), method: :put do |f| %>
 				
 				<%= f.label 'Title' %>
 				<%= f.text_field :tasktitle, class: "form-control" %>

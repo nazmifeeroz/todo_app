@@ -66,7 +66,14 @@
 				<% @list.each do |l| %>
 				<tr>
 					<td><%= l.listname %></td>
-					<td><%= link_to "Delete", tasklist_path(id:l.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-xs" %></td>
+					<td><%= link_to 'New Task', tasklist_path(id: l.id), class: "btn btn-primary btn-xs" %></td>
+					<td>
+					<% if Task.where(tasklist_id: l.id).count == 0 %>
+                        <%= link_to "Delete", tasklist_path(id:l.id), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-xs" %></td>
+                     <% else %>
+                        <button class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="There are task(s) to be done." disabled="true">Delete</button>
+                    <% end %>
+					
 				</tr>
 				<% end %>
 			</tbody>
@@ -89,35 +96,6 @@
 </div>
 </div>
 <!-- End of New Task List Modal -->
-
-<!-- New Task Modal -->
-<div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="quoteLabel">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">New Task</h4>
-      </div>
-      <div class="modal-body">
-		
-		<h4>Select Task List:</h4>
-		<ul>
-			<% @list.each do |l| %>
-			<li><%= link_to l.listname, tasklist_path(id: l.id) %></li> 
-			<% @taskurl = l.id %>
-			<% end %>
-		</ul>
-			
-		
-        	
-      <div class="modal-footer">
-        
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<!-- End of New Task Modal -->
 
 <!-- Task Modal -->
 <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="quoteLabel">
@@ -185,6 +163,26 @@
 			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
 				<%= f.hidden_field :imgname, value: "cover" %>
 				<%= image_submit_tag 'cover', class:"img-responsive img-thumbnail" %>
+			<% end %>
+
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover5" %>
+				<%= image_submit_tag 'cover5', class:"img-responsive img-thumbnail" %>
+			<% end %>
+
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover6" %>
+				<%= image_submit_tag 'cover6', class:"img-responsive img-thumbnail" %>
+			<% end %>
+
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover7" %>
+				<%= image_submit_tag 'cover7', class:"img-responsive img-thumbnail" %>
+			<% end %>
+
+			<%= form_for @bgimage, url: bgimage_path(id:1), method: :put do |f| %>
+				<%= f.hidden_field :imgname, value: "cover8" %>
+				<%= image_submit_tag 'cover8', class:"img-responsive img-thumbnail" %>
 			<% end %>
 
 
