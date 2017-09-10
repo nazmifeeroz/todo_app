@@ -59,6 +59,14 @@ body {
   text-align: center;
 }
 
+.panel-heading {
+  text-align: center;
+}
+
+#accCont {
+  display: block; height: 200px; overflow: auto;
+}
+
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
