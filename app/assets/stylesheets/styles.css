@@ -14,6 +14,10 @@ body {
   vertical-align: middle;
 }
 
+.msgg {
+  margin-left: 5%;
+}
+
 #message {
   position: absolute;
   top: 10px;

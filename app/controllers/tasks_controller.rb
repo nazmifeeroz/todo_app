@@ -2,14 +2,15 @@ class TasksController < ApplicationController
 
 	def create
 
-		tasklist = Tasklist.find(params[:tasklist_id])
+		@tasklist = Tasklist.find(params[:tasklist_id])
 		task_params = params.require(:task).permit(:tasktitle, :taskdesc, :taskstatus, :taskdue)
-		if tasklist.tasks.create(task_params).valid?
+		@task = @tasklist.tasks.create(task_params)
+		if @task.valid?
 			flash[:success] = "New task created."
 			redirect_to root_path
 		else
 			flash[:danger] = "Field(s) are blank."
-			redirect_to root_path
+			render "tasklists/show"
 		end
 	
 	end
